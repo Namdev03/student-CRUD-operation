@@ -5,9 +5,9 @@ router.get('/',allStudent)
 //=========getAllstuent Data=======
 router.get('/getStudentbyid/:ID',getStudentByID)
 //=========poststuent Data=======
-router.post('/addstudent',postStudent)
+router.post('/',postStudent)
 //========Delete student Data=====
-router.delete('/deletestudent',deletaStudent)
+router.delete('/delete/:studentId',deletaStudent)
 //========update student Data=====
 router.patch('/updatedata',updateStudent)
 

@@ -60,7 +60,7 @@ async function postStudent(req, res) {
             lastname,
             course,
             contactNo,
-            isActive
+           isActive 
         });
 
         res.status(201).json({
@@ -80,7 +80,7 @@ async function postStudent(req, res) {
 async function deletaStudent(req, res) {
 
     try {
-        const _id = req.body
+        const _id = req.params.studentId
         const deletestudent = await studentSchema.findByIdAndDelete(_id)
         if (!deletestudent) {
             return res.status(404).json({ message: "no student avialble of this ID", Data: "Null" })

@@ -9,7 +9,7 @@ const courses = [
     "DSA",
 ];
 
-const StudentRegister = () => {
+const StudentRegister = ({setStudentList}) => {
     const {
         register,
         handleSubmit,
@@ -19,16 +19,25 @@ const StudentRegister = () => {
 
     // ✅ Submit Function
     async function registerStudent(studentData) {
-        try {
-            const res = await axiosInstance.post("/sudetnt/addstudent",studentData)
-           const registerstudent = await res.data()
-           console.log(registerstudent);
-           
-        } catch (error) {
-            console.log(error.message);
+    try {
 
-        }
+        const res = await axiosInstance.post("/student", studentData); // ✅ fixed endpoint
+        const registerstudent = res.data;
+
+        console.log(registerstudent);
+
+        
+        setStudentList((prev) => [...prev, registerstudent.Data]);
+
+        reset();
+
+        alert(res.data.message);
+
+    } catch (error) {
+        alert("Something went wrong");
+        console.error(error);
     }
+}
 
     return (
         <div className="min-h-screen flex items-center justify-center bg-gray-100">

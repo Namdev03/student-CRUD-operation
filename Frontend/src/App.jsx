@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import StudentRegister from './pages/StudentRegister'
 import StudentTable from './pages/StudentTable'
 
 function App() {
+    const [studentList, setStudentList] = useState([])
+    
   return (
 <div className="min-h-screen bg-gray-100 p-4 sm:p-6">
     
@@ -13,7 +15,7 @@ function App() {
             <h2 className="text-xl font-semibold mb-4 text-gray-700">
                 Register Student
             </h2>
-            <StudentRegister />
+            <StudentRegister setStudentList={setStudentList} />
         </div>
 
         {/* Table Section */}
@@ -22,7 +24,7 @@ function App() {
                 Student Records
             </h2>
             <div className="overflow-x-auto">
-                <StudentTable />
+                <StudentTable studentList={studentList} setStudentList={setStudentList} />
             </div>
         </div>
 
