@@ -29,7 +29,6 @@ const StudentTable = ({studentList,setStudentList}) => {
         setStudentList((prev) =>
             prev.filter((student) => student._id !== studentId)
         );
-
         alert(res.data.message);
 
     } catch (error) {
@@ -72,7 +71,7 @@ const StudentTable = ({studentList,setStudentList}) => {
                                 <td className="py-2 px-4 border">{student.createdAt}</td>
                            <td className="py-2 px-4 border">
                             <div>
-                                <button onClick={()=>{
+                                <button className="bg-red-600 text-black rounded-full" onClick={()=>{
                                     console.log(student._id,student.firstname);
                                     deleteStudentDataApi(student._id)
                                 }}>Delete</button>

@@ -27,7 +27,7 @@ const StudentRegister = ({setStudentList}) => {
         console.log(registerstudent);
 
         
-        setStudentList((prev) => [...prev, registerstudent.Data]);
+        setStudentList((prev) => [registerstudent.Data,...prev]);
 
         reset();
 
