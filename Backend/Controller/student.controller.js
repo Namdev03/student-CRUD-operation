@@ -101,12 +101,12 @@ async function deletaStudent(req, res) {
 //========== update Student data ================
 
 async function updateStudent(req, res) {
-    console.log(req.params);
+   
 
     try {
         const { _id } = req.params;
-
-        const updatestudent = await studentSchema.findOneAndReplace(
+        
+        const updatestudent = await studentSchema.findOneAndUpdate(
             _id,
             req.body,
             { returnDocument: 'after', runValidators: true }

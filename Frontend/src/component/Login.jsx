@@ -18,7 +18,7 @@ async function loginApi(payload) {
         const res = await authentictionIntace.post('/authentication/login',payload)
         const data =res.data
         console.log(data);
-        navigate(<Home/>)
+       window.location.replace('/home');
     } catch (error) {
         alert ("somting went wrong")
     }

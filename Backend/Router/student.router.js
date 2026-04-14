@@ -9,6 +9,6 @@ router.post('/',postStudent)
 //========Delete student Data=====
 router.delete('/delete/:studentId',deletaStudent)
 //========update student Data=====
-router.patch('/updatedata',updateStudent)
+router.patch('/updatedata/:Id',updateStudent)
 
 module.exports = router

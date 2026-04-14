@@ -20,7 +20,7 @@ function Register() {
             const data = res.data
             console.log(`register data`, data);
             reset()
-            navigate(<Login />)
+                 window.location.replace('/login');
         } catch (error) {
             alert(error.message)
         }

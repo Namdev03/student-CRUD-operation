@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import StudentRegister from '../pages/StudentRegister'
 import StudentTable from '../pages/StudentTable'
 function Home() {

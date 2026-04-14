@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axiosInstance from "../service/axiosInstance";
+import { useNavigate } from "react-router";
 
 const students = [
     "First Name",
@@ -12,6 +13,7 @@ const students = [
 ];
 
 const StudentTable = ({studentList,setStudentList}) => {
+    const navigate = useNavigate()
     async function fetchAllStudentApi(payload) {
         try {
             const res = await axiosInstance.get("/student/")
@@ -36,6 +38,7 @@ const StudentTable = ({studentList,setStudentList}) => {
         console.error(error);
     }
 }
+
     useEffect(() => {
         fetchAllStudentApi()
     }, [])
@@ -75,7 +78,7 @@ const StudentTable = ({studentList,setStudentList}) => {
                                     console.log(student._id,student.firstname);
                                     deleteStudentDataApi(student._id)
                                 }}>Delete</button>
-                                <button>Update</button>
+                                <button onClick={()=> navigate('/update')} >Update</button>
                             </div>
                            </td>
 
